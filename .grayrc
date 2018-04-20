@@ -1,0 +1,20 @@
+Unix.*.Root.MacroPath: .:$(PWD):$(GRAYSYS)/util:$(ROOTSYS)/macros
+
+#files to load at log in:
+Rint.Logon: $(GRAYSYS)/.gray_logon
+Rint.History $(GRAYSYS)/.gray_history
+Rint.HistSize: 1000000
+
+Rint.PromptColor: yellow
+Rint.BracketColor: bold green
+Rint.BadBracketColor: bold red underlined
+Rint.TabComColor: magenta
+
+#default root variables form the grsi enviorment
+Canvas.MoveOpaque: false
+Canvas.ResizeOpaque: false
+Canvas.ShowEventStatus: true
+Canvas.ShowToolBar: true
+Canvas.UseScreenFactor: true
+Canvas.ShowGuideLines: false
+
