@@ -3,11 +3,11 @@
 
 
 
-ROOT_GENERATE_DICTIONARY(G__GInt GInt.h LINKDEF LinkDef.h)
+ROOT_GENERATE_DICTIONARY(G__Gint Gint.h LINKDEF LinkDef.h)
 
-add_library(GInt SHARED GInt.cxx G__GInt.cxx)
+add_library(Gint SHARED Gint.cxx G__Gint.cxx)
 
-target_link_libraries(GInt ${ROOT_LIBRARIES})
+target_link_libraries(Gint ${ROOT_LIBRARIES})
 
 
 

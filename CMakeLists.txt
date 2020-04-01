@@ -35,6 +35,8 @@ list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
 
 find_package(ROOT REQUIRED COMPONENTS RIO Net)
 
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnonportable-include-path")
+
 include(${ROOT_USE_FILE})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -46,7 +48,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 
-#if (NOT CMAKE_BUILD_TYPE) 
+#if (NOT CMAKE_BUILD_TYPE)
 #	set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type" FORCE)
 #	message(STATUS "Build type not specified: defaulting to ${CMAKE_BUILD_TYPE}")
 #endif()

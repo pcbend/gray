@@ -6,7 +6,10 @@
 #pragma link off all functions;
 #pragma link C++ nestedclasses;
 
-#pragma link C++ class GInt+;
+#pragma link C++ class GInterruptHandler+;
+#pragma link C++ class Gint+;
+
+
 
 #endif
 

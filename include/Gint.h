@@ -2,24 +2,31 @@
 #define __GINT_H__
 
 #include <TRint.h>
+#include <TSysEvtHandler.h>
 
-class GInt : public TRint {
+class Gint : public TRint {
   public:
-    GInt();
-    ~GInt();
+    static Gint *Get(int argc=1,const char *argv[]=0);
 
-    void Print() const;
+    virtual void HandleException(Int_t sig);
+    virtual void Terminate(Int_t status = 0);
+    
 
+  private: 
+    static Gint *fGint;
+    Gint(int argv,const char *argc[]);
+    ~Gint();
 
-  private:
-    int data1;
-    int data2;
-
-  ClassDef(GInt,0)
-
+  ClassDef(Gint,0)  
 };
 
 
+class GInterruptHandler : public TSignalHandler {
+  public:
+    GInterruptHandler():TSignalHandler(ESignals::kSigInterrupt,false) { }
+    bool Notify();
+  ClassDef(GInterruptHandler,0)
+};
+
 
 #endif
-
